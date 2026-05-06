@@ -1,0 +1,7 @@
+# Editor & IDE settings
+.vscode/
+.kiro/
+
+# OS files
+.DS_Store
+Thumbs.db

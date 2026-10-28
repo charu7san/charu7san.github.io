@@ -60,7 +60,7 @@ sections.forEach(section => sectionObserver.observe(section));
 // Fade-in on scroll
 // ===========================
 const fadeEls = document.querySelectorAll(
-  '.stat-card, .skill-category, .timeline-item, .project-card, .education-card, .contact-card, .about-text, .about-stats'
+  '.stat-card, .skill-category, .timeline-item, .project-card, .cert-card, .education-card, .contact-card, .about-text, .about-stats'
 );
 
 fadeEls.forEach(el => el.classList.add('fade-in'));

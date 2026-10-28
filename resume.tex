@@ -1,221 +1,130 @@
 %-------------------------
-% Resume in Latex
-% Author : Harshibar
-% Based off of: https://github.com/jakeryang/resume
-% License : MIT
+% Resume in LaTeX - Charu Sanchihar
+% Data Analyst
 %------------------------
 
-\documentclass[letterpaper,11pt]{article}
+\documentclass[letterpaper,10pt]{article}
 
-\usepackage{latexsym}
-\usepackage[empty]{fullpage}
+\usepackage[margin=0.55in, top=0.48in, bottom=0.48in]{geometry}
 \usepackage{titlesec}
-\usepackage{marvosym}
-\usepackage[usenames,dvipsnames]{color}
-\usepackage{verbatim}
+\usepackage[usenames,dvipsnames]{xcolor}
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
-\usepackage{tabularx}
-% only for pdflatex
-% \input{glyphtounicode}
-
-% fontawesome
-\usepackage{fontawesome5}
-
-% fixed width
-\usepackage[scale=0.90,lf]{FiraMono}
-
-% light-grey
-\definecolor{light-grey}{gray}{0.83}
-\definecolor{dark-grey}{gray}{0.3}
-\definecolor{text-grey}{gray}{.08}
-
-\DeclareRobustCommand{\ebseries}{\fontseries{eb}\selectfont}
-\DeclareTextFontCommand{\texteb}{\ebseries}
-
-% custom underilne
-\usepackage{contour}
-\usepackage[normalem]{ulem}
-\renewcommand{\ULdepth}{1.8pt}
-\contourlength{0.8pt}
-\newcommand{\myuline}[1]{%
-  \uline{\phantom{#1}}%
-  \llap{\contour{white}{#1}}%
-}
-
-
-% custom font: helvetica-style
 \usepackage{tgheros}
-\renewcommand*\familydefault{\sfdefault} 
-%% Only if the base font of the document is to be sans serif
+\renewcommand*\familydefault{\sfdefault}
 \usepackage[T1]{fontenc}
 
+% Color definitions
+\definecolor{primary}{RGB}{20, 68, 120}       % Deep professional navy
+\definecolor{bodytext}{RGB}{33, 37, 41}       % High contrast dark charcoal
+\definecolor{subtext}{RGB}{95, 105, 120}      % Muted slate for dates/locations
+\definecolor{rulecolor}{RGB}{205, 215, 225}   % Clean subtle divider rule
 
 \pagestyle{fancy}
-\fancyhf{} % clear all header and footer fields
-\fancyfoot{}
+\fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
-% Adjust margins
-\addtolength{\oddsidemargin}{-0.5in}
-\addtolength{\evensidemargin}{0in}
-\addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-.5in}
-\addtolength{\textheight}{1.0in}
-
-\urlstyle{same}
-
 \raggedbottom
 \raggedright
-\setlength{\tabcolsep}{0in}
 
-% Sections formatting - serif
-% \titleformat{\section}{
-%   \vspace{2pt} \scshape \raggedright\large % header section
-% }{}{0em}{}[\color{black} \titlerule \vspace{-5pt}]
+% Section formatting: Bold Primary Navy with clean horizontal rule
+\titleformat{\section}
+  {\large\bfseries\color{primary}}
+  {}{0em}{}
+  [{\color{rulecolor}\titlerule[0.8pt]}]
 
-% TODO EBSERIES
-% sans serif sections
-\titleformat {\section}{
-    \bfseries \vspace{2pt} \raggedright \large % header section
-}{}{0em}{}[\color{light-grey} {\titlerule[2pt]} \vspace{-4pt}]
+\titlespacing*{\section}{0pt}{8.5pt}{3.5pt}
 
-% only for pdflatex
-% Ensure that generate pdf is machine readable/ATS parsable
-% \pdfgentounicode=1
-
-%-------------------------
-% Custom commands
-\newcommand{\resumeItem}[1]{
-  \item\small{
-    {#1 \vspace{-1pt}}
-  }
-}
-
-\newcommand{\resumeSubheading}[4]{
-  \vspace{-1pt}\item
-    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & {\color{dark-grey}\small #2}\vspace{1pt}\\ % top row of resume entry
-      \textit{#3} & {\color{dark-grey} \small #4}\\ % second row of resume entry
-    \end{tabular*}\vspace{-4pt}
-}
-
-\newcommand{\resumeSubSubheading}[2]{
-    \item
-    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-      \textit{\small#1} & \textit{\small #2} \\
-    \end{tabular*}\vspace{-7pt}
-}
-
-\newcommand{\resumeProjectHeading}[2]{
-    \item
-    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-      #1 & {\color{dark-grey}} \\
-    \end{tabular*}\vspace{-4pt}
-}
-
-\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
-
-\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
-
-% CHANGED default leftmargin  0.15 in
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0in, label={}]}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{0pt}}
-
-\color{text-grey}
-
-%-------------------------------------------
-%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+% Bullet point styling
+\renewcommand\labelitemi{\raisebox{0.15ex}{\tiny$\bullet$}}
 
 \begin{document}
+\color{bodytext}
 
-%----------HEADING----------
+%----------HEADER----------
 \begin{center}
-    \textbf{\Huge Charu Sanchihar} \\ \vspace{4pt}
-    \small \faEnvelope \texttt{charupolsan@gmail.com} $|$ 
-    \faMapMarker* \texttt{Gdansk, Poland}
-    \vspace{-6pt}
+    {\fontsize{24pt}{28pt}\selectfont \textbf{\color{primary} Charu Sanchihar}} \\[4pt]
+    \small \color{bodytext}
+    Warsaw, Poland \enspace\textbar\enspace
+    \href{mailto:charupolsan@gmail.com}{charupolsan@gmail.com} \enspace\textbar\enspace
+    \href{tel:+48572299163}{+48 572 299 163} \enspace\textbar\enspace
+    \href{https://linkedin.com/in/charu-sanchihar07}{linkedin.com/in/charu-sanchihar07} \enspace\textbar\enspace
+    \href{https://charu7san.github.io}{charu7san.github.io}
 \end{center}
-
-%-----------PROFESSIONAL SUMMARY-----------
-\section{PROFESSIONAL SUMMARY}
 \vspace{-4pt}
-\small{
-Data Analyst and QA Automation professional with 6+ years of experience in banking and SaaS domains. Strong expertise in SQL, Python, data validation, and reporting. Experienced in analyzing datasets, ensuring data integrity, and supporting data-driven decisions. Seeking a Data Analyst role.
-}
-\vspace{-8pt}
 
-%-----------SKILLS-----------
-\section{SKILLS}
-\begin{itemize}[leftmargin=0in, label={}]
-\small{\item{
-\textbf{Languages:} Python, SQL, Java \\
-\textbf{Data Tools:} MySQL, Power BI, Excel, Pandas, NumPy \\
-\textbf{Automation:} Selenium \\
-\textbf{Concepts:} Data Analysis, Data Validation, ETL, Agile, SDLC
-}}
+%-----------PROFILE-----------
+\section{PROFILE}
+\noindent\small
+Data Analyst with \textbf{6+ years of experience} across banking and SaaS, specializing in \textbf{SQL-driven reporting}, \textbf{KPI dashboards}, \textbf{data validation}, and customer analytics. Strong record of partnering with product, analytics, and engineering teams to improve \textbf{reporting accuracy} and operational efficiency.
+
+%-----------TECHNICAL SKILLS-----------
+\section{TECHNICAL SKILLS}
+\small
+\noindent\textbf{Core:} SQL, Python, REST APIs, MySQL, Git, Jupyter Notebook, Postman \\
+\textbf{Analytics:} Power BI, Tableau, Excel, pandas, NumPy, Matplotlib, R, KPI reporting \\
+\textbf{Data Quality:} Data validation, KPI auditing, reporting accuracy checks, discrepancy analysis, root cause analysis
+
+%-----------PROFESSIONAL EXPERIENCE-----------
+\section{PROFESSIONAL EXPERIENCE}
+\small
+\noindent\textbf{Sprinklr} \hfill \color{subtext}Bangalore, India\color{bodytext} \\
+\textit{Senior SDET (Data \& Analytics focus)} \hfill \color{subtext}Jul 2021 -- Jan 2025\color{bodytext}
+\begin{itemize}[leftmargin=1.2em, itemsep=1.5pt, parsep=0pt, topsep=2pt]
+    \item Designed \textbf{SQL-based data quality checks} across Sprinklr's reporting pipelines, identifying discrepancies that caused inaccurate KPI outputs for enterprise customers.
+    \item Led \textbf{root cause investigations} on production data anomalies using SQL queries and pattern analysis across \textbf{multi-million row datasets}.
+    \item Audited \textbf{KPI calculation logic} and validated end-to-end data flows for customer-facing dashboards and SLA reporting.
+    \item Built \textbf{Python scripts} to automate recurring validation workflows, reducing manual checks and improving release-cycle reliability.
+    \item Translated investigation findings into actionable reports for product, analytics, and engineering teams.
 \end{itemize}
 
-%-----------EXPERIENCE-----------
-\section{EXPERIENCE}
-\resumeSubHeadingListStart
+\vspace{3pt}
+\noindent\textbf{Cognizant Technology Solutions India Pvt. Ltd.} \hfill \color{subtext}Pune, India\color{bodytext} \\
+\textit{Programmer Analyst \textbar{} Client: ABN AMRO Bank} \hfill \color{subtext}Dec 2018 -- Jun 2021\color{bodytext}
+\begin{itemize}[leftmargin=1.2em, itemsep=1.5pt, parsep=0pt, topsep=2pt]
+    \item Supported banking \textbf{data analysis and reporting} for ABN AMRO Bank, using SQL for validation, reconciliation, and KPI reporting.
+    \item Analyzed datasets to identify discrepancies, validate reporting outputs, and improve \textbf{data accuracy} for stakeholders.
+    \item Collaborated with business and development teams to validate reporting requirements and data-driven acceptance criteria.
+\end{itemize}
 
-\resumeSubheading
-{Cognizant Technology Solutions India Pvt. Ltd.}{Dec 2018 -- Jun 2021}
-{Data Analyst \& QA Automation Engineer}{Pune, India}
-\resumeItemListStart
-\resumeItem{Worked with ABN AMRO Bank on data validation, reconciliation, and reporting using SQL.}
-\resumeItem{Analyzed large datasets to identify discrepancies and generate business insights.}
-\resumeItem{Built automated regression test suites using Selenium and Java in Agile environment.}
-\resumeItem{Improved reporting and testing efficiency through Python-based utilities.}
-\resumeItemListEnd
+%-----------PERSONAL PROJECTS-----------
+\section{PERSONAL PROJECTS}
+\small
+\noindent\textbf{Sales Data Analysis \& Dashboard} \hfill \color{subtext}Jul 2025\color{bodytext}
+\begin{itemize}[leftmargin=1.2em, itemsep=1.5pt, parsep=0pt, topsep=2pt]
+    \item Analyzed \textbf{50K+ sales records} using SQL joins, CTEs, and window functions; built a \textbf{Matplotlib dashboard} for KPI tracking and sales trend analysis.
+    \item Cleaned, validated, and transformed source data to improve reporting accuracy before dashboard creation.
+\end{itemize}
 
-\resumeSubheading
-{Sprinklr}{Jul 2021 -- Jan 2025}
-{Senior QA Automation Engineer}{Bangalore / India}
-\resumeItemListStart
-\resumeItem{Led automation testing for SaaS-based customer experience platform.}
-\resumeItem{Validated backend data using SQL queries to ensure reporting accuracy.}
-\resumeItem{Collaborated with analytics and product teams to verify business metrics.}
-\resumeItem{Analyzed production issues using logs and database queries for root cause analysis.}
-\resumeItemListEnd
+\vspace{2pt}
+\noindent\textbf{Telecom Customer Churn Analysis \& Power BI Dashboard} \hfill \color{subtext}Nov 2025\color{bodytext}
+\begin{itemize}[leftmargin=1.2em, itemsep=1.5pt, parsep=0pt, topsep=2pt]
+    \item Analyzed IBM Telco Customer Churn data (\textbf{7,032 customers}, 21 features) using \textbf{Python}, \textbf{pandas}, and \textbf{SQL} to calculate churn rate, customer tenure patterns, contract risk, and high-risk customer segments.
+    \item Built a \textbf{Power BI dashboard} to present churn insights, identifying \textbf{26.6\% overall churn}, \textbf{42.7\% churn for month-to-month contracts}, and \textbf{53.3\% churn in the first 6 months}; recommended targeted onboarding and contract incentives.
+\end{itemize}
 
-\resumeSubHeadingListEnd
-%-----------PROJECTS-----------
-\section{PROJECTS}
-\resumeSubHeadingListStart
+\vspace{2pt}
+\noindent\textbf{EU Job Market Analytics Dashboard} \hfill \color{subtext}Apr 2026\color{bodytext}
+\begin{itemize}[leftmargin=1.2em, itemsep=1.5pt, parsep=0pt, topsep=2pt]
+    \item Built an \textbf{automated ETL pipeline} and live analytics dashboard using Python, REST APIs, GitHub Actions, and React to track EU hiring trends, salary benchmarks, remote-work ratios, skill demand, and tech hub clustering.
+\end{itemize}
 
-\resumeProjectHeading
-{\textbf{Sales Data Analysis \& Dashboard (SQL + Power BI)} $|$ \href{https://github.com/charu7san/Retail-Orders-Data-Analysis-Project}{\myuline{GitHub}}}{July 2025}
-\resumeItemListStart
-\resumeItem{Analyzed 50K+ sales records using SQL to identify revenue trends, top-performing products, and regional performance.}
-\resumeItem{Created complex SQL queries using JOINs, GROUP BY, CTEs, and window functions for KPI calculations.}
-\resumeItem{Built interactive Power BI dashboard with revenue trends, profit margins, and sales forecasts.}
-\resumeItem{Performed data cleaning and transformation before visualization.}
-\resumeItemListEnd
-
-\resumeProjectHeading
-{\textbf{Customer Churn Analysis (Python + SQL)}}{}
-\resumeItemListStart
-\resumeItem{Performed exploratory data analysis (EDA) using Python (Pandas, NumPy, Matplotlib) on customer dataset.}
-\resumeItem{Identified churn patterns based on tenure, subscription type, and engagement metrics.}
-\resumeItem{Wrote SQL queries to segment customers and calculate retention metrics.}
-\resumeItem{Generated insights and recommendations to reduce churn rate.}
-\resumeItemListEnd
-
-\resumeSubHeadingListEnd
 %-----------EDUCATION-----------
 \section{EDUCATION}
-\resumeSubHeadingListStart
-\resumeSubheading
-{MVJ College of Engineering}{Aug 2014 -- Jun 2018}
-{B.E. in Information Science}{}
-\resumeSubHeadingListEnd
+\small
+\noindent\textbf{B.E. in Information Science} \hfill \color{subtext}Aug 2014 -- Jun 2018\color{bodytext} \\
+MVJ College of Engineering \\
+\textit{Relevant coursework:} Object-Oriented Programming (OOP), Database Management Systems (DBMS), Data Structures, Software Engineering
+
+%-----------CERTIFICATIONS-----------
+\section{CERTIFICATIONS}
+\small
+\noindent\textbf{Google Data Analytics Professional Certificate} $|$ \href{https://coursera.org/verify/professional-cert/QAFRHC32BBTU}{\textit{\color{primary}Verify Certificate}} \hfill \color{subtext}April 2026 -- October 2026\color{bodytext} \\
+Comprehensive 8-course series covering data cleaning, SQL aggregations, Tableau dashboards, R programming, and case study. \\[3pt]
+\noindent\textbf{Python for Data Science, AI \& Development} \hfill \color{subtext}October 16, 2025\color{bodytext} \\
+Strengthened practical Python skills for data analysis, API integration, notebook-based exploration, and automation of recurring analytical workflows.
 
 \end{document}
